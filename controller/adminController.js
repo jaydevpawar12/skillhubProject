@@ -10,6 +10,8 @@ import Attendence from "../models/Attendence.js"
 import Installment from "../models/Installment.js"
 import validator from "validator"
 import hwUpload from "../utils/uploadhw.js"
+import { installmentTemplate } from "../email/installmentTemplate.js"
+import sendEmail from "../utils/email.js"
 
 
 //course
@@ -111,6 +113,16 @@ export const deleteContent = asyncHandler(async (req, res) => {
     res.status(200).json({ message: "delete content success " })
 })
 //student
+export const blockStudent = asyncHandler(async (req, res) => {
+    const { id } = req.params
+    const result = await Student.findByIdAndUpdate(id, { active: false })
+    res.status(200).json({ message: "block student success ", result })
+})
+export const unblockStudent = asyncHandler(async (req, res) => {
+    const { id } = req.params
+    const result = await Student.findByIdAndUpdate(id, { active: true })
+    res.status(200).json({ message: "block student success ", result })
+})
 export const getAllStudent = asyncHandler(async (req, res) => {
     const result = await Student.find()
     res.status(200).json({ message: "fetch all student success ", result })
@@ -118,6 +130,11 @@ export const getAllStudent = asyncHandler(async (req, res) => {
 
 export const addStudent = asyncHandler(async (req, res) => {
     const { email, courseId, mobile, homeContact, address } = req.body
+    const test = await Student.findOne({ email })
+    if (test) {
+        return res.status(400).json({ error: 'student already exists ' });
+
+    }
     if (!validator.isEmail(email)) {
         return res.status(400).json({ error: "Invalid Email" })
     }
@@ -153,6 +170,20 @@ export const deleteStudent = asyncHandler(async (req, res) => {
     res.status(200).json({ message: "delete Student success " })
 })
 //Attendence
+export const getStudentAttendenceHist = asyncHandler(async (req, res) => {
+    // const result = await Attendence.find()
+    const { id } = req.params
+    const attendenceDetails = await Attendence.find({ stuId: id })
+    const studentDetails = await Student.findById(id)
+    const coursetDetails = await Course.findOne(studentDetails.courseId[0])
+    res.status(200).json({
+        message: "fetch all attendence success ", result: {
+            name: studentDetails.name,
+            course: coursetDetails.courseName,
+            Attendence: attendenceDetails
+        }
+    })
+})
 export const getAllAttendence = asyncHandler(async (req, res) => {
     const result = await Attendence.find()
     res.status(200).json({ message: "fetch all attendence success ", result })
@@ -197,6 +228,20 @@ export const deleteAttendence = asyncHandler(async (req, res) => {
     res.status(200).json({ message: "fetch all attendence success " })
 })
 //Exam
+export const getStudentExamHist = asyncHandler(async (req, res) => {
+    // const result = await Exam.find()
+    const { id } = req.params
+    const examDetails = await Exam.find({ courseId: id })
+    const coursetDetails = await Course.findById(id)
+
+    res.status(200).json({
+        message: "fetch all Exam success ", result: {
+
+            course: coursetDetails.courseName,
+            exams: examDetails
+        }
+    })
+})
 export const getExam = asyncHandler(async (req, res) => {
     const result = await Exam.find()
     res.status(200).json({ message: "fetch all Exam success ", result })
@@ -204,15 +249,21 @@ export const getExam = asyncHandler(async (req, res) => {
 
 export const addExam = asyncHandler(async (req, res) => {
     const { date, name, question } = req.body
+    for (const item of question) {
+        if (!validator.isMongoId(item)) {
+            return res.status(400).json({ error: "Invalid id" })
+        }
+
+    }
     if (!validator.isDate(date)) {
         return res.status(400).json({ error: "Invalid date" })
     }
     if (validator.isEmpty(name)) {
         return res.status(400).json({ error: "Invalid name" })
     }
-    if (!validator.isMongoId(question)) {
-        return res.status(400).json({ error: "Invalid q" })
-    }
+    // if (!validator.isMongoId(question)) {
+    //     return res.status(400).json({ error: "Invalid q" })
+    // }
     await Exam.create(req.body)
     res.status(201).json({
         message: "add all Exam success "
@@ -237,16 +288,29 @@ export const deleteExam = asyncHandler(async (req, res) => {
 })
 //Installment
 export const getStudentInstallment = asyncHandler(async (req, res) => {
-    const result = await Installment.find()
-    res.status(200).json({ message: "fetch all Installment success ", result })
+    const { id } = req.params
+    const installmentDetails = await Installment.find({ stuId: id })
+    const studentDetails = await Student.findById(id)
+    const coursetDetails = await Course.findOne(studentDetails.courseId[0])
+    // const result = await Installment.find()
+    res.status(200).json({
+        message: "fetch all Installment success ", result: {
+            // id: installmentDetails._id,
+            name: coursetDetails.courseName,
+            course: studentDetails.courseId,
+            fee: coursetDetails.courseFee,
+            installment: installmentDetails
+        }
+    })
 })
+
 export const getInstallment = asyncHandler(async (req, res) => {
     const result = await Installment.find()
     res.status(200).json({ message: "fetch all Installment success ", result })
 })
 
 export const addInstallment = asyncHandler(async (req, res) => {
-    const { stuId, date, amount } = req.body
+    const { stuId, date, amount, email } = req.body
     if (!validator.isMongoId(stuId)) {
         return res.status(400).json({ error: "Invalid Id" })
     }
@@ -256,9 +320,26 @@ export const addInstallment = asyncHandler(async (req, res) => {
     if (validator.isEmpty(amount)) {
         return res.status(400).json({ error: "please fill  am" })
     }
-    await Installment.create(req.body)
+    const studentDetails = await Student.findById(stuId)
+
+    const courseDetails = await Course.findOne(studentDetails.courseId[0])
+    console.log(courseDetails);
+    const installments = await Installment.find({ stuId });
+    const totalPaid = installments.reduce((acc, installment) => {
+        return acc + Number(installment.amount);
+    }, 0);
+    const Balance = courseDetails.courseFee - totalPaid - Number(amount);
+
+    await sendEmail({
+        to: studentDetails.email,
+        subject: "welcome to Skillhub",
+        message: installmentTemplate({ name: studentDetails.name })
+    })
+
+    // await Installment.create(req.body)
     res.status(201).json({
-        message: "fetch all Installment success"
+        message: "fetch all Installment success",
+        Balance
     })
 })
 
@@ -333,6 +414,18 @@ export const deleteQuestions = asyncHandler(async (req, res) => {
     res.status(200).json({ message: "fetch all Questions success " })
 })
 //HomeWork
+export const getStudentHomeWorkDetails = asyncHandler(async (req, res) => {
+    // const result = await HomeWork.find()
+    const { id } = req.params
+    const homeWorkDetails = await HomeWork.find({ courseId: id })
+    const coursetDetails = await Course.findById(id)
+    res.status(200).json({
+        message: "fetch all HomeWork success ", result: {
+            course: coursetDetails.courseName,
+            task: homeWorkDetails
+        }
+    })
+})
 export const getHomeWork = asyncHandler(async (req, res) => {
     const result = await HomeWork.find()
     res.status(200).json({ message: "fetch all HomeWork success ", result })

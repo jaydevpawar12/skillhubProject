@@ -35,4 +35,4 @@ const questionsSchema = mongoose.Schema({
         required: true
     },
 }, { timestamps: true })
-export default mongoose.models.questionsSchema || mongoose.model("question", questionsSchema)
+export default mongoose.models.questions || mongoose.model("question", questionsSchema)

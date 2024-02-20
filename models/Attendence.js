@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 const attendenceSchema = mongoose.Schema({
     stuId: {
         type: mongoose.Types.ObjectId,
+        ref: "student",
         required: true
     },
     presenties: {
@@ -16,4 +17,4 @@ const attendenceSchema = mongoose.Schema({
         required: true
     }
 }, { timestamps: true })
-export default mongoose.models.attendenceSchema || mongoose.model("attendence", attendenceSchema)
+export default mongoose.models.attendence || mongoose.model("attendence", attendenceSchema)

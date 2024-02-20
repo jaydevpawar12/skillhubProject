@@ -28,5 +28,5 @@ const courseSchema = mongoose.Schema({
     //     required: true
     // }
 }, { timestamps: true })
-export default mongoose.models.courseSchema || mongoose.model("course", courseSchema)
+export default mongoose.models.course || mongoose.model("course", courseSchema)
 

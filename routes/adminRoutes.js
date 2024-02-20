@@ -8,6 +8,7 @@ import {
     addInstallment,
     addQuestions,
     addStudent,
+    blockStudent,
     deleteAttendence,
     deleteContent,
     deleteCourses,
@@ -24,6 +25,11 @@ import {
     getHomeWork,
     getInstallment,
     getQuestions,
+    getStudentAttendenceHist,
+    getStudentExamHist,
+    getStudentHomeWorkDetails,
+    getStudentInstallment,
+    unblockStudent,
     updateAttendence,
     updateContent,
     updateCourses,
@@ -51,20 +57,25 @@ router
     .delete("/content/delete/:id", deleteContent)
     //student
     .get("/student", getAllStudent)
+    .post("/student/block/:id", blockStudent)
+    .post("/student/unblock/:id", unblockStudent)
     .post("/student/add", addStudent)
     .put("/student/update/:id", updateStudent)
     .delete("/student/delete/:id", deleteStudent)
     //Attendence
+    .get("/attendenceDetails/:id", getStudentAttendenceHist)
     .get("/attendence", getAllAttendence)
     .post("/attendence/add", addAttendence)
     .put("/attendence/update/:id", updateAttendence)
     .delete("/attendence/delete/:id", deleteAttendence)
     //exam
+    .get("/examDetails/:id", getStudentExamHist)
     .get("/exam", getExam)
     .post("/exam/add", addExam)
     .put("/exam/update/:id", updateExam)
     .delete("/exam/delete/:id", deleteExam)
-    //Fees
+    //Installment
+    .get("/installmentDetails/:id", getStudentInstallment)
     .get("/installment", getInstallment)
     .post("/installment/add", addInstallment)
     .put("/installment/update/:id", updateInstallment)
@@ -75,6 +86,7 @@ router
     .put("/question/update/:id", updateQuestions)
     .delete("/question/delete/:id", deleteQuestions)
     //Homework
+    .get("/homeworkDetails/:id", getStudentHomeWorkDetails)
     .get("/homework", getHomeWork)
     .post("/homework/add", addHomeWork)
     .put("/homework/update/:id", updateHomeWork)

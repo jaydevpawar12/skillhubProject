@@ -11,4 +11,4 @@ const contentSchema = mongoose.Schema({
         required: true
     }
 }, { timestamps: true })
-export default mongoose.models.contentSchema || mongoose.model("content", contentSchema)
+export default mongoose.models.content || mongoose.model("content", contentSchema)

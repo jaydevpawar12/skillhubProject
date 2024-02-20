@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 const homeWorkSchema = mongoose.Schema({
     courseId: {
         type: mongoose.Types.ObjectId,
+        ref: "course",
         required: true
     },
     title: {
@@ -20,4 +21,4 @@ const homeWorkSchema = mongoose.Schema({
     },
 
 }, { timestamps: true })
-export default mongoose.models.homeWorkSchema || mongoose.model("homework", homeWorkSchema)
+export default mongoose.models.homeWork || mongoose.model("homework", homeWorkSchema)

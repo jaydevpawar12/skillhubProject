@@ -29,7 +29,10 @@ const studentSchema = mongoose.Schema({
     },
     password: {
         type: String,
-        default: true
+    },
+    active: {
+        type: Boolean,
+        default:true
     },
 }, { timestamps: true })
-export default mongoose.models.studentSchema || mongoose.model("student", studentSchema)
+export default mongoose.models.student || mongoose.model("student", studentSchema)
