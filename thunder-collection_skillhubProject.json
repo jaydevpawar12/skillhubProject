@@ -1,0 +1,765 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "skillhubProject",
+    "dateExported": "2024-02-20T04:44:51.161Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "9b91db31-aa0b-4362-bfbd-79fa80b3db32",
+            "name": "student",
+            "containerId": "",
+            "created": "2024-02-08T05:59:13.992Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "8513032b-3b2a-4ac2-b79a-9cfb82c19264",
+            "name": "admin",
+            "containerId": "",
+            "created": "2024-02-08T05:59:21.277Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "450bf6f4-007b-4d8f-a1d1-c32030bdb587",
+            "name": "student",
+            "containerId": "8513032b-3b2a-4ac2-b79a-9cfb82c19264",
+            "created": "2024-02-08T05:59:41.083Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "c67f9005-b579-4403-87ef-3a9d1b9ace3f",
+            "name": "course",
+            "containerId": "8513032b-3b2a-4ac2-b79a-9cfb82c19264",
+            "created": "2024-02-08T06:27:49.576Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "dc42f254-6b28-4af3-ae1d-9813d6772e92",
+            "name": "course content",
+            "containerId": "8513032b-3b2a-4ac2-b79a-9cfb82c19264",
+            "created": "2024-02-08T06:31:24.199Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "b48684a2-10b4-43b9-9406-f35dc04825ab",
+            "name": "attendence",
+            "containerId": "8513032b-3b2a-4ac2-b79a-9cfb82c19264",
+            "created": "2024-02-08T11:19:52.176Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "1e48b69e-90af-4d4d-9c57-cd64461fada9",
+            "name": "installment",
+            "containerId": "8513032b-3b2a-4ac2-b79a-9cfb82c19264",
+            "created": "2024-02-10T05:09:16.328Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "f50070a8-7fbd-48d2-b688-1782f665fb1c",
+            "name": "auth",
+            "containerId": "",
+            "created": "2024-02-10T12:53:37.326Z",
+            "sortNum": 90000
+        },
+        {
+            "_id": "68f66e01-b267-4c6c-b1bd-729eba56cc95",
+            "name": "homework",
+            "containerId": "8513032b-3b2a-4ac2-b79a-9cfb82c19264",
+            "created": "2024-02-12T05:23:42.108Z",
+            "sortNum": 100000
+        },
+        {
+            "_id": "16d1b588-e6bb-48d7-9a0b-8898103bc7a7",
+            "name": "question",
+            "containerId": "8513032b-3b2a-4ac2-b79a-9cfb82c19264",
+            "created": "2024-02-12T06:54:52.063Z",
+            "sortNum": 110000
+        },
+        {
+            "_id": "b7196cbb-bc20-43e9-bbc9-ddebd9ae4aa6",
+            "name": "exam",
+            "containerId": "8513032b-3b2a-4ac2-b79a-9cfb82c19264",
+            "created": "2024-02-12T08:21:05.346Z",
+            "sortNum": 120000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "ea2cc31a-66b1-4530-b1ff-ba986fb9806c",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "450bf6f4-007b-4d8f-a1d1-c32030bdb587",
+            "name": "get student",
+            "url": "http://localhost:5000/api/admin/student",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-02-08T05:59:53.301Z",
+            "modified": "2024-02-13T06:53:53.667Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a8326bdf-abc8-46a2-b820-fe0f7394f876",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "450bf6f4-007b-4d8f-a1d1-c32030bdb587",
+            "name": "add student",
+            "url": "http://localhost:5000/api/admin/student/add",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-08T06:01:08.987Z",
+            "modified": "2024-02-13T04:41:54.691Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ess\",\n  \"email\":\"jess@gmail.com\",\n  \"courseId\":\"65c9fd170e3a49e45b13c0b3\",\n  \"mobile\":\"8877994455\",\n  \"homeContact\":\"9988774455\",\n  \"address\":\"H.No 1,New York \"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d3a27fe4-4ba0-497d-843b-6f3f8d1fe4ed",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "450bf6f4-007b-4d8f-a1d1-c32030bdb587",
+            "name": "delete student",
+            "url": "http://localhost:5000/api/admin/student/delete/65c9fd410e3a49e45b13c0b6",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-02-08T06:19:16.973Z",
+            "modified": "2024-02-12T11:24:13.756Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "937d5fc1-8e13-4744-9cc8-398208911861",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "c67f9005-b579-4403-87ef-3a9d1b9ace3f",
+            "name": "get course",
+            "url": "http://localhost:5000/api/admin/course",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-02-08T06:27:59.055Z",
+            "modified": "2024-02-08T11:47:40.012Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cba00bf5-ce18-4827-bfd8-190925edd950",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "c67f9005-b579-4403-87ef-3a9d1b9ace3f",
+            "name": "add course",
+            "url": "http://localhost:5000/api/admin/course/add",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-02-08T06:28:07.697Z",
+            "modified": "2024-02-13T04:41:10.173Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "contentId",
+                        "value": "65caf233ff31d6ca2f151bd3"
+                    },
+                    {
+                        "name": "courseName",
+                        "value": "mern"
+                    },
+                    {
+                        "name": "courseFee",
+                        "value": "5000"
+                    },
+                    {
+                        "name": "courseDuration",
+                        "value": "5month"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "courseImage",
+                        "value": "d:\\image\\background1.jpg"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "19b2d36a-71c9-4170-a9ba-c26514a47397",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "c67f9005-b579-4403-87ef-3a9d1b9ace3f",
+            "name": "update course",
+            "url": "http://localhost:5000/api/admin/course/update/65c9fd170e3a49e45b13c0b3",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2024-02-08T06:28:17.145Z",
+            "modified": "2024-02-12T11:25:34.717Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"courseName\":\"fullstack\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e5caa4ae-0012-4c59-9f7a-9f105e1b874e",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "c67f9005-b579-4403-87ef-3a9d1b9ace3f",
+            "name": "delete course",
+            "url": "http://localhost:5000/api/admin/course/delete/65c9fd170e3a49e45b13c0b3",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2024-02-08T06:28:24.584Z",
+            "modified": "2024-02-12T11:26:15.285Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5520e0af-0d1d-4eb8-9b0d-89928f5797fc",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "dc42f254-6b28-4af3-ae1d-9813d6772e92",
+            "name": "get content",
+            "url": "http://localhost:5000/api/admin/content",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-02-08T06:31:44.919Z",
+            "modified": "2024-02-08T06:33:23.794Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e1b8f52b-c788-4126-a343-107d185203ef",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "dc42f254-6b28-4af3-ae1d-9813d6772e92",
+            "name": "add content",
+            "url": "http://localhost:5000/api/admin/content/add",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2024-02-08T06:33:56.949Z",
+            "modified": "2024-02-12T11:08:54.021Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"html\",\n  \"topic\":\"tags\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e2276824-95d4-46e2-ba99-feaf176e22f9",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "dc42f254-6b28-4af3-ae1d-9813d6772e92",
+            "name": "update content",
+            "url": "http://localhost:5000/api/admin/content/update/65c9fc45247fc7e6a7d8136a",
+            "method": "PUT",
+            "sortNum": 100000,
+            "created": "2024-02-08T06:34:06.170Z",
+            "modified": "2024-02-12T11:27:28.998Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"css\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d55ef897-39ec-4edf-b0ea-6d0da0cf55bb",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "dc42f254-6b28-4af3-ae1d-9813d6772e92",
+            "name": "delete content",
+            "url": "http://localhost:5000/api/admin/content/delete/65c9fc45247fc7e6a7d8136a",
+            "method": "DELETE",
+            "sortNum": 110000,
+            "created": "2024-02-08T06:34:14.954Z",
+            "modified": "2024-02-12T11:27:47.860Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ba0b412a-902c-4bea-b279-c374160a9184",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "b48684a2-10b4-43b9-9406-f35dc04825ab",
+            "name": "get attendence",
+            "url": "http://localhost:5000/api/admin/attendence",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2024-02-08T11:20:06.961Z",
+            "modified": "2024-02-09T05:38:10.826Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "55aa819a-f71c-491d-a772-dd0297fd8acf",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "b48684a2-10b4-43b9-9406-f35dc04825ab",
+            "name": "add attendence",
+            "url": "http://localhost:5000/api/admin/attendence/add",
+            "method": "POST",
+            "sortNum": 130000,
+            "created": "2024-02-08T11:20:35.429Z",
+            "modified": "2024-02-13T06:40:03.048Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"stuId\":\"65caf2fdff31d6ca2f151bda\",\n\"presenties\":\"present\",\n\"datetime\":\"2024-02-02\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d49f4657-b6c1-43bd-824a-c1c252e5764b",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "b48684a2-10b4-43b9-9406-f35dc04825ab",
+            "name": "update attendence",
+            "url": "http://localhost:5000/api/admin/attendence/update/65c9fda40e3a49e45b13c0bb",
+            "method": "PUT",
+            "sortNum": 140000,
+            "created": "2024-02-08T11:21:14.230Z",
+            "modified": "2024-02-12T11:29:44.796Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"presenties\":\"absent\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "924e983b-0a9f-49cc-bd13-c12d07b16182",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "b48684a2-10b4-43b9-9406-f35dc04825ab",
+            "name": "delete attendence",
+            "url": "http://localhost:5000/api/admin/attendence/delete/65c9fda40e3a49e45b13c0bb",
+            "method": "DELETE",
+            "sortNum": 150000,
+            "created": "2024-02-08T11:21:26.293Z",
+            "modified": "2024-02-12T11:30:10.700Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f6c7ad3b-e7ed-46cf-95f3-77a55a90d386",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "1e48b69e-90af-4d4d-9c57-cd64461fada9",
+            "name": "get installment",
+            "url": "http://localhost:5000/api/admin/installment",
+            "method": "GET",
+            "sortNum": 200000,
+            "created": "2024-02-10T05:09:35.490Z",
+            "modified": "2024-02-12T11:15:13.694Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "abc369ff-92e9-4096-943a-c72246273d64",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "1e48b69e-90af-4d4d-9c57-cd64461fada9",
+            "name": "add installment",
+            "url": "http://localhost:5000/api/admin/installment/add",
+            "method": "POST",
+            "sortNum": 210000,
+            "created": "2024-02-10T05:09:47.262Z",
+            "modified": "2024-02-15T06:08:29.024Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"stuId\":\"65cda0eb5efaf4212fdfe315\",\n  \"amount\":\"4444\",\n  \"date\":\"2024-02-11\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "79e47d66-ceb6-4651-94c5-c87eea755253",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "1e48b69e-90af-4d4d-9c57-cd64461fada9",
+            "name": "update installment",
+            "url": "http://localhost:5000/api/admin/installment/update/65c9fdb50e3a49e45b13c0be",
+            "method": "PUT",
+            "sortNum": 220000,
+            "created": "2024-02-10T05:09:59.886Z",
+            "modified": "2024-02-12T11:31:18.794Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"amount\":\"2222\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9a681e77-7c50-45d7-b1e6-82c64e5c2e64",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "1e48b69e-90af-4d4d-9c57-cd64461fada9",
+            "name": "delete installment",
+            "url": "http://localhost:5000/api/admin/installment/delete/65c9fdb50e3a49e45b13c0be",
+            "method": "DELETE",
+            "sortNum": 230000,
+            "created": "2024-02-10T05:12:08.826Z",
+            "modified": "2024-02-12T11:31:43.356Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9c75c3d7-394e-425d-9552-b5529f3536db",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "f50070a8-7fbd-48d2-b688-1782f665fb1c",
+            "name": "register",
+            "url": "http://localhost:5000/api/auth/register",
+            "method": "POST",
+            "sortNum": 240000,
+            "created": "2024-02-10T12:53:52.616Z",
+            "modified": "2024-02-14T04:50:18.419Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ross\",\n  \"mobile\":\"6677889977\",\n  \"email\":\"jayrock2505@gmail.com\",\n  \"password\":\"123\",\n  \"address\":\"xyz\",\n  \"homeContact\":\"8889445566\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4e734696-9c6f-4a68-8a7c-57d37ebf8edb",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "f50070a8-7fbd-48d2-b688-1782f665fb1c",
+            "name": "login",
+            "url": "http://localhost:5000/api/auth/login",
+            "method": "POST",
+            "sortNum": 250000,
+            "created": "2024-02-10T12:54:00.350Z",
+            "modified": "2024-02-13T10:23:20.906Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"jess@gmail.com\",\n  \"password\":\"123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "474bc1ce-bfd9-40bd-90c2-12c48cb2472e",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "68f66e01-b267-4c6c-b1bd-729eba56cc95",
+            "name": "get homework",
+            "url": "http://localhost:5000/api/admin/homework",
+            "method": "GET",
+            "sortNum": 260000,
+            "created": "2024-02-12T05:24:20.964Z",
+            "modified": "2024-02-12T06:25:37.513Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "20bf6595-1446-4562-94c3-d74cdd0bd6a4",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "68f66e01-b267-4c6c-b1bd-729eba56cc95",
+            "name": "add homeWork",
+            "url": "http://localhost:5000/api/admin/homework/add",
+            "method": "POST",
+            "sortNum": 270000,
+            "created": "2024-02-12T05:24:42.635Z",
+            "modified": "2024-02-13T07:37:24.517Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "courseId",
+                        "value": "65caf2e6ff31d6ca2f151bd6"
+                    },
+                    {
+                        "name": "title",
+                        "value": "object"
+                    },
+                    {
+                        "name": "desc",
+                        "value": "Array And Object"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "d:\\image\\background1.jpg"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "437a8e24-df83-4b67-9cb6-f256417766f0",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "16d1b588-e6bb-48d7-9a0b-8898103bc7a7",
+            "name": "get question",
+            "url": "http://localhost:5000/api/admin/question",
+            "method": "GET",
+            "sortNum": 280000,
+            "created": "2024-02-12T06:55:06.649Z",
+            "modified": "2024-02-12T08:23:07.818Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3547baed-2a15-4cdd-bc47-5449ca53d997",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "16d1b588-e6bb-48d7-9a0b-8898103bc7a7",
+            "name": "add question",
+            "url": "http://localhost:5000/api/admin/question/add",
+            "method": "POST",
+            "sortNum": 290000,
+            "created": "2024-02-12T06:55:19.287Z",
+            "modified": "2024-02-13T08:11:53.778Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n \"question\":\"what is your city name?\",\n \"op1\":\"a\",\n \"op2\":\"b\",\n \"op3\":\"c\",\n \"op4\":\"d\",\n \"stuAns\":\"a\",\n \"rightAns\":\"b\",\n \"explanation\":\"c\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4b468c6e-af4f-42e7-8f94-350f3c120ee0",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "b7196cbb-bc20-43e9-bbc9-ddebd9ae4aa6",
+            "name": "get exam",
+            "url": "http://localhost:5000/api/admin/exam",
+            "method": "GET",
+            "sortNum": 300000,
+            "created": "2024-02-12T08:21:18.090Z",
+            "modified": "2024-02-12T08:21:46.001Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "73323fbc-e7b4-47c5-ad63-7611f1c67af0",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "b7196cbb-bc20-43e9-bbc9-ddebd9ae4aa6",
+            "name": "add exam",
+            "url": "http://localhost:5000/api/admin/exam/add",
+            "method": "POST",
+            "sortNum": 310000,
+            "created": "2024-02-12T08:21:26.861Z",
+            "modified": "2024-02-13T08:15:00.095Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"html\",\n\"date\":\"2024-03-03\",\n\"question\":[\"65cb2434c1ca5c5cf4a7b569\",\"65cb2449c1ca5c5cf4a7b56b\"],\n\"courseId\":\"65caf2e6ff31d6ca2f151bd6\"\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "507d3b1a-fc5f-4c33-8fc6-6dd1e40c8a52",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "450bf6f4-007b-4d8f-a1d1-c32030bdb587",
+            "name": "update student",
+            "url": "http://localhost:5000/api/admin/student/update/65c9fd410e3a49e45b13c0b6",
+            "method": "PUT",
+            "sortNum": 320000,
+            "created": "2024-02-12T11:19:35.963Z",
+            "modified": "2024-02-12T11:22:28.207Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"vips\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "466b2576-73aa-4f72-a354-666015c98d01",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "68f66e01-b267-4c6c-b1bd-729eba56cc95",
+            "name": "update homeWork",
+            "url": "http://localhost:5000/api/admin/homework/update/65c9fe394a206e2481e0576a",
+            "method": "PUT",
+            "sortNum": 330000,
+            "created": "2024-02-12T11:33:23.395Z",
+            "modified": "2024-02-12T11:34:37.383Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\":\"object\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ca600a12-ba28-417c-a2c3-c2c5611856dd",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "68f66e01-b267-4c6c-b1bd-729eba56cc95",
+            "name": "delete homework",
+            "url": "http://localhost:5000/api/admin/homework/delete/65c9fe394a206e2481e0576a",
+            "method": "DELETE",
+            "sortNum": 340000,
+            "created": "2024-02-12T11:35:57.383Z",
+            "modified": "2024-02-12T11:36:32.008Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "36062a09-b6a8-4e45-981d-3a48854f7f0d",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "16d1b588-e6bb-48d7-9a0b-8898103bc7a7",
+            "name": "update question",
+            "url": "http://localhost:5000/api/admin/question/update/65c9fe524a206e2481e0576d",
+            "method": "PUT",
+            "sortNum": 350000,
+            "created": "2024-02-12T11:36:57.999Z",
+            "modified": "2024-02-12T11:38:26.840Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"question\":\"what is your full name\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f4fe7064-73b1-45b0-aa58-8f0fc477cbe9",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "16d1b588-e6bb-48d7-9a0b-8898103bc7a7",
+            "name": "delete question",
+            "url": "http://localhost:5000/api/admin/question/delete/65c9fe524a206e2481e0576d",
+            "method": "DELETE",
+            "sortNum": 370000,
+            "created": "2024-02-12T11:39:01.022Z",
+            "modified": "2024-02-12T11:39:19.273Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "dc278b87-b5be-404c-b607-015559dba783",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "b7196cbb-bc20-43e9-bbc9-ddebd9ae4aa6",
+            "name": "update exam",
+            "url": "http://localhost:5000/api/admin/exam/update/65c9fe664a206e2481e05770",
+            "method": "PUT",
+            "sortNum": 380000,
+            "created": "2024-02-12T11:39:44.995Z",
+            "modified": "2024-02-12T11:41:36.861Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"java\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9aab8efe-b269-416b-bc50-d74126ccfd3d",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "b7196cbb-bc20-43e9-bbc9-ddebd9ae4aa6",
+            "name": "delete exam",
+            "url": "http://localhost:5000/api/admin/exam/delete/65c9fe664a206e2481e05770",
+            "method": "DELETE",
+            "sortNum": 390000,
+            "created": "2024-02-12T11:41:50.262Z",
+            "modified": "2024-02-12T11:42:51.526Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1db7d247-b4b2-4f9c-9c10-0f9733b51c21",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "1e48b69e-90af-4d4d-9c57-cd64461fada9",
+            "name": "get installment hist",
+            "url": "http://localhost:5000/api/admin/installmentDetails/65caf2fdff31d6ca2f151bda",
+            "method": "GET",
+            "sortNum": 400000,
+            "created": "2024-02-13T05:12:39.854Z",
+            "modified": "2024-02-13T05:59:02.228Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1cc16111-30c0-4fdb-8be6-af8bc948545d",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "b48684a2-10b4-43b9-9406-f35dc04825ab",
+            "name": "get attendence hist",
+            "url": "http://localhost:5000/api/admin/attendenceDetails/65caf2fdff31d6ca2f151bda",
+            "method": "GET",
+            "sortNum": 410000,
+            "created": "2024-02-13T06:40:27.307Z",
+            "modified": "2024-02-13T06:42:57.115Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c0f08ff9-5d7a-469b-bf16-49c6b2572982",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "b7196cbb-bc20-43e9-bbc9-ddebd9ae4aa6",
+            "name": "get exam hist",
+            "url": "http://localhost:5000/api/admin/examDetails/65caf2e6ff31d6ca2f151bd6",
+            "method": "GET",
+            "sortNum": 420000,
+            "created": "2024-02-13T06:54:35.395Z",
+            "modified": "2024-02-13T07:02:31.909Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9ac16ad7-dc91-41a7-be40-98668ab6722d",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "68f66e01-b267-4c6c-b1bd-729eba56cc95",
+            "name": "get homework hist",
+            "url": "http://localhost:5000/api/admin/homeworkDetails/65caf2e6ff31d6ca2f151bd6",
+            "method": "GET",
+            "sortNum": 430000,
+            "created": "2024-02-13T07:48:29.189Z",
+            "modified": "2024-02-13T07:48:54.701Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6d250795-802d-431f-a0d6-923e0d4f7135",
+            "colId": "37270389-179e-48a9-8edd-71374cdb1300",
+            "containerId": "450bf6f4-007b-4d8f-a1d1-c32030bdb587",
+            "name": "block student",
+            "url": "http://localhost:5000/api/admin/student/unblock/65caf2fdff31d6ca2f151bda",
+            "method": "POST",
+            "sortNum": 440000,
+            "created": "2024-02-13T09:56:27.569Z",
+            "modified": "2024-02-13T10:49:26.855Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
